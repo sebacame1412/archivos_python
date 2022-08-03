@@ -28,6 +28,17 @@ def ej3():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
     
+    csvfile = open('stock.csv')
+    data = list(csv.DictReader('stock.csv'))
+
+    tornillos_totales = 0
+
+    for i in data['tornillos']:
+        tornillos_totales = tornillos_totales + int(i['tornillos'])
+
+    print("Stock de tornillos:", tornillos_totales)
+
+    csvfile.close
 
 
 def ej4():
@@ -48,6 +59,26 @@ def ej4():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+csvfile = open('propiedades.csv', 'r')
+data = list(csv.DictReader('propiedades.csv'))
+csvfile.close()
+
+ambientes_2 = 0 
+ambientes_3 = 0
+
+for i in data:
+    try:
+        if i['ambientes'] =='2':
+                ambientes_2 = ambientes_2 + 1
+
+        elif i['ambientes'] == '3':
+            ambientes_3 = ambientes_3 + 1
+
+    except: print("La propiedad", i, "no tiene detallado cuantos ambientes tiene")
+
+print("Cantidad de propiedades con dos ambientes:", ambientes_2)
+
+print("Cantidad de propiedades con 3 ambientes:", ambientes_3)
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")

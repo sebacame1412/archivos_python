@@ -33,6 +33,10 @@ def ej1():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+stock = {"tornillos": 100, "tuercas": 150, "arandelas": 300}
+
+
+print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,12 +44,13 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
     # while True.....
     
+
     # Paso 2:
     # Dentro de ese bucle consultar al usuario por consola
     # que producto desea agregar al stock
@@ -66,6 +71,32 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    while True:
+        print("Para finalizar ingrese la palabra FIN")
+        producto = str(input("¿que producto desea ingresar?\n"))
+
+        if producto == "FIN":
+            print(stock)
+            break
+
+        if producto == "tornillos":
+            cantidad_totnillos = int(input("Ingrese la cantidad de tonillos que desea agregar:\n"))
+            stock['tornillos'] = cantidad_totnillos + stock['tornillos'] 
+    
+        if producto == "tuercas":
+            cantidad_tuercas = int(input("Ingrese la cantidad de tuercas que desea agregar:\n"))
+            stock['tuercas'] = cantidad_tuercas  + stock['tuercas']  
+    
+        if producto == "arandelas":
+            cantidad_arandelas = int(input("Ingrese la cantidad de arandelas que desea agregar:\n"))
+            stock['arandelas'] = cantidad_arandelas + stock['arandelas']  
+
+        else:
+            print("El producto ingresado no es correcto")
+
+    print(stock)
+
+
 
 
 if __name__ == '__main__':
